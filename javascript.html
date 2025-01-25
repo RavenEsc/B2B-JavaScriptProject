@@ -5,10 +5,19 @@
 
 <div>
     <h1 style="text-align: center;">How many lives does a cat have?</h1>
-    <!-- put your HTML code to input data here -->
     <h2 style="text-align: center;" id="test"><button type="button" onclick="nineSum()">Answer</button></h2>
+    <!-- put your HTML code to input data here -->
+    <input id="firstName" value="First">
+    <input id="lastName" value="Last">
+    <input id="userID" value="ID">
+    <input type="date" id="birthDate">
+    <button onclick="nameScript(), idScript(), birthScript()">Submit</button>
+    <output id="fnameOutput"></output>
+    <output id="lnameOutput"></output>
+    <output id="uidOutput"></output>
+    <output id="birthOutput"></output>
 
-    <p id="test2"></p>
+    <p id="x20"></p>
 </div>
 
 <script>
@@ -19,8 +28,21 @@
     // write your JS Loop For here to print the Xs
     // use something like document.write(str.padStart(i,"x") + "<br>");
 
+    function nameScript() {
+        let f = document.getElementById("firstName").value;
+        document.getElementById("fnameOutput").innerHTML = f;
+        let l = document.getElementById("lastName").value;
+        document.getElementById("lnameOutput").innerHTML = l;
+    }
+    function idScript() {
+        let uid = document.getElementById("userID").value;
+        document.getElementById("uidOutput").innerHTML = uid;
+    }
+    function birthScript() {
+        let birth = document.getElementById("birthDate").value;
+        document.getElementById("birthOutput").innerHTML = birth;
+    }
 
-    
     const a = 6;
 function nineSum() {
     let d = 9 - a;
@@ -34,7 +56,7 @@ function looperP() {
     for (let i = 1; i <= 20; i++) {
         padded = str.padStart(i,"x");
         console.log(i);
-        document.getElementById("test2").innerHTML += padded + "<br>";
+        document.getElementById("x20").innerHTML += padded + "<br>";
     }
 }
 looperP()

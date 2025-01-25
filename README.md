@@ -7,7 +7,7 @@
 
 Starting with the HTML wrapper code in the Code Editor...
 
-- [ ] You may or may not use a `<form>`. Note that there is no backend process or program to submit a form to. If you use a form and submit, you must suppress the default action or the page will clear/load unpredictable results.
+- [ x ] You may or may not use a `<form>`. Note that there is no backend process or program to submit a form to. If you use a form and submit, you must suppress the default action or the page will clear/load unpredictable results.
 
 - [ ] Ask the user to input their first name, last name, a UserID, and a birthdate in type date format.  The UserID must contain an uppercase, a lowercase, a number, and be 8 to 12 chars long.  
 
