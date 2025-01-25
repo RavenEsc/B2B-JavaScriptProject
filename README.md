@@ -39,14 +39,14 @@ Starting with the HTML wrapper code in the Code Editor...
 
 - [ ] Use document.getElementById().innerHtml to display results and information messages on the Display window.
 
-- [ ] Create a "For loop” that loops 20 times and uses code similar to:
+- [ x ] Create a "For loop” that loops 20 times and uses code similar to:
 
-- [ ] let str = "";
+- [ x ] let str = "";
 str = str.padStart(i,”x”); // i is the loop counter
 
-- [ ] to print 20 lines of Xs from 1 to 20 Xs.  The first line should have a single X and the 20th line should have 20 Xs.
+- [ x ] to print 20 lines of Xs from 1 to 20 Xs.  The first line should have a single X and the 20th line should have 20 Xs.
 
-- [ ] Your Xs should be printed on the Display page as depicted in the example below.
+- [ x ] Your Xs should be printed on the Display page as depicted in the example below.
 
 - [ ] Your code output should show in the Display window.  This serves as the equivalent of the browser window and shows the render of the DOM document you are coding.
 

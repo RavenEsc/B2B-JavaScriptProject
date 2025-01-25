@@ -4,7 +4,11 @@
 
 
 <div>
-    <! put your HTML code to input data here >
+    <h1 style="text-align: center;">How many lives does a cat have?</h1>
+    <!-- put your HTML code to input data here -->
+    <h2 style="text-align: center;" id="test"><button type="button" onclick="nineSum()">Answer</button></h2>
+
+    <p id="test2"></p>
 </div>
 
 <script>
@@ -14,7 +18,26 @@
     // write your JS functions here
     // write your JS Loop For here to print the Xs
     // use something like document.write(str.padStart(i,"x") + "<br>");
-        
+
+
+    
+    const a = 6;
+function nineSum() {
+    let d = 9 - a;
+    let x = a + d;
+    console.log(2 * x);
+    return document.getElementById("test").innerHTML = x + " not " + a;
+}
+
+function looperP() {
+    let str = ""
+    for (let i = 1; i <= 20; i++) {
+        padded = str.padStart(i,"x");
+        console.log(i);
+        document.getElementById("test2").innerHTML += padded + "<br>";
+    }
+}
+looperP()
 </script>
 
 </body>
