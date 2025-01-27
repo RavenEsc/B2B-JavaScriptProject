@@ -9,11 +9,11 @@ Starting with the HTML wrapper code in the Code Editor...
 
 - [ x ] You may or may not use a `<form>`. Note that there is no backend process or program to submit a form to. If you use a form and submit, you must suppress the default action or the page will clear/load unpredictable results.
 
-- [ ] Ask the user to input their first name, last name, a UserID, and a birthdate in type date format.  The UserID must contain an uppercase, a lowercase, a number, and be 8 to 12 chars long.  
+- [ x ] Ask the user to input their first name, last name, a UserID, and a birthdate in type date format.  The UserID must contain an uppercase, a lowercase, a number, and be 8 to 12 chars long.  
 
-- [ ] Create a JS function to verify formats of the UserID field.
+- [ x ] Create a JS function to verify formats of the UserID field.
 
-- [ ] You will either need to use a For loop to iterate through your data fields character by character with JS functions like char.toUpperCase() and parsInt(char), or use Regular Expressions, to validate the UserID format.
+- [ x ] You will either need to use a For loop to iterate through your data fields character by character with JS functions like char.toUpperCase() and parsInt(char), or use Regular Expressions, to validate the UserID format.
 
 - [ ] Use the following variables (with exact variable names) to hold the data:
 

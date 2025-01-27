@@ -7,15 +7,15 @@
     <h1 style="text-align: center;">How many lives does a cat have?</h1>
     <h2 style="text-align: center;" id="test"><button type="button" onclick="nineSum()">Answer</button></h2>
     <!-- put your HTML code to input data here -->
-    <input id="firstName" value="First">
-    <input id="lastName" value="Last">
-    <input id="userID" value="ID">
+    <input id="firstName" placeholder="First">
+    <input id="lastName" placeholder="Last">
+    <input id="userID" placeholder="ID">
     <input type="date" id="birthDate">
     <button onclick="nameScript(), idScript(), birthScript()">Submit</button>
     <output id="fnameOutput"></output>
     <output id="lnameOutput"></output>
     <output id="uidOutput"></output>
-    <output id="birthOutput"></output>
+    <output id="birthdayOutput"></output>
 
     <p id="x20"></p>
 </div>
@@ -29,20 +29,25 @@
     // use something like document.write(str.padStart(i,"x") + "<br>");
 
     function nameScript() {
-        let f = document.getElementById("firstName").value;
-        document.getElementById("fnameOutput").innerHTML = f;
-        let l = document.getElementById("lastName").value;
-        document.getElementById("lnameOutput").innerHTML = l;
+        let f = document.getElementById("firstName").value.toLowerCase();
+        let fname = f.charAt(0).toUpperCase() + f.slice(1);
+        document.getElementById("fnameOutput").innerHTML = "<br><br>" + fname;
+        let l = document.getElementById("lastName").value.toLowerCase();
+        let lname = l.charAt(0).toUpperCase() + l.slice(1);
+        document.getElementById("lnameOutput").innerHTML = "<br><br>" + lname;
     }
     function idScript() {
         let uid = document.getElementById("userID").value;
-        document.getElementById("uidOutput").innerHTML = uid;
+        if(uid.match(/[A-Z]/) && uid.match(/[a-z]/) && uid.match(/[0-9]/) && uid.length >= 8 && uid.length <= 12) {
+            return document.getElementById("uidOutput").innerHTML = "<br><br>uid is valid: " + uid;
+        } else {
+            return document.getElementById("uidOutput").innerHTML = "<br><br>uid is invalid: " + uid;
+        }
     }
     function birthScript() {
-        let birth = document.getElementById("birthDate").value;
-        document.getElementById("birthOutput").innerHTML = birth;
+        let birthday = document.getElementById("birthDate").value;
+        document.getElementById("birthdayOutput").innerHTML = "<br><br>" + birthday;
     }
-
     const a = 6;
 function nineSum() {
     let d = 9 - a;
