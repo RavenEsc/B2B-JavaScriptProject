@@ -68,12 +68,14 @@
         }
     }
 
+    // user inputs user id here
     function idScript() {
         let userID = document.getElementById("userID").value;
+        // validates the userID if it contains a capital, lowercase, number, and is between 8 and 12
         if(userID.match(/[A-Z]/) && userID.match(/[a-z]/) && userID.match(/[0-9]/) && userID.length >= 8 && userID.length <= 12) {
-            return uid = userID, document.getElementById("uidOutput").innerHTML = "";
+            return uid = userID, document.getElementById("uidOutput").innerHTML = ""; // sets the uid and clears any messages onscreen
         } else {
-            return uid = null, document.getElementById("uidOutput").innerHTML = "Invalid uid";
+            return uid = null, document.getElementById("uidOutput").innerHTML = "Invalid uid"; // sets the uid to null and notifies issues onscreen
         }
     }
 
