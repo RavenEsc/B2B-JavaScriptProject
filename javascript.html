@@ -4,20 +4,23 @@
 
 
 <div>
-    <h1 style="text-align: center;">How many lives does a cat have?</h1>
-    <h2 style="text-align: center;" id="test"><button type="button" onclick="nineSum()">Answer</button></h2>
     <!-- put your HTML code to input data here -->
     <input id="firstName" placeholder="First">
+    <output id="fnameOutput"></output> <br><br>
     <input id="lastName" placeholder="Last">
+    <output id="lnameOutput"></output> <br><br>
     <input id="userID" placeholder="ID">
+    <output id="uidOutput"></output> <br><br>
     <input type="date" id="birthDate">
-    <button onclick="nameScript(), idScript(), birthScript()">Submit</button>
-    <output id="fnameOutput"></output>
-    <output id="lnameOutput"></output>
-    <output id="uidOutput"></output>
     <output id="birthdayOutput"></output>
+    <button onclick="acceptScript()">Accept</button> <br><br>
+
+    <output id="endOutput"></output>
 
     <p id="x20"></p>
+
+    <h1 style="text-align: center;">How many lives does a cat have?</h1>
+    <h2 style="text-align: center;" id="test"><input type="number" id="catLives"><br><button type="button" onclick="nineSum()">Answer</button></h2>
 </div>
 
 <script>
@@ -28,43 +31,100 @@
     // write your JS Loop For here to print the Xs
     // use something like document.write(str.padStart(i,"x") + "<br>");
 
-    function nameScript() {
+    function fnameScript() {
         let f = document.getElementById("firstName").value.toLowerCase();
-        let fname = f.charAt(0).toUpperCase() + f.slice(1);
-        document.getElementById("fnameOutput").innerHTML = "<br><br>" + fname;
+        if(f !== "") {
+        fname = f.charAt(0).toUpperCase() + f.slice(1);
+            return fname, document.getElementById("fnameOutput").innerHTML = "";
+        } else {
+            return fname = null, document.getElementById("fnameOutput").innerHTML = "Invalid fname";
+        }
+    }
+    function lnameScript() {
         let l = document.getElementById("lastName").value.toLowerCase();
-        let lname = l.charAt(0).toUpperCase() + l.slice(1);
-        document.getElementById("lnameOutput").innerHTML = "<br><br>" + lname;
+        if(l !== "") {
+        lname = l.charAt(0).toUpperCase() + l.slice(1);
+            return lname, document.getElementById("lnameOutput").innerHTML = "";
+        } else {
+            return lname = null, document.getElementById("lnameOutput").innerHTML = "Invalid lname";
+        }
+    }
+    function fullnameScript(fname, lname) {
+        if(fname !== null && lname !== null) {
+        fullname = fname + " " + lname;
+            return fullname;
+        } else {
+            return fullname = null
+        }
     }
     function idScript() {
-        let uid = document.getElementById("userID").value;
-        if(uid.match(/[A-Z]/) && uid.match(/[a-z]/) && uid.match(/[0-9]/) && uid.length >= 8 && uid.length <= 12) {
-            return document.getElementById("uidOutput").innerHTML = "<br><br>uid is valid: " + uid;
+        let userID = document.getElementById("userID").value;
+        if(userID.match(/[A-Z]/) && userID.match(/[a-z]/) && userID.match(/[0-9]/) && userID.length >= 8 && userID.length <= 12) {
+            return uid = userID, document.getElementById("uidOutput").innerHTML = "";
         } else {
-            return document.getElementById("uidOutput").innerHTML = "<br><br>uid is invalid: " + uid;
+            return uid = null, document.getElementById("uidOutput").innerHTML = "Invalid uid";
         }
     }
     function birthScript() {
-        let birthday = document.getElementById("birthDate").value;
-        document.getElementById("birthdayOutput").innerHTML = "<br><br>" + birthday;
+        let bday = document.getElementById("birthDate").value;
+        if(bday !== "") {
+            return birthday = bday, document.getElementById("birthdayOutput").innerHTML = ""
+        } else {
+            return birthday = null, document.getElementById("birthdayOutput").innerHTML = "Invalid birthday <br><br>";
+        }
     }
-    const a = 6;
-function nineSum() {
-    let d = 9 - a;
-    let x = a + d;
-    console.log(2 * x);
-    return document.getElementById("test").innerHTML = x + " not " + a;
-}
+    function dateDiff(birthday) {
+        const today = new Date();
+        if(birthday !== null) {
+        let msBirth = new Date(birthday);
+        let msDiff = today.getTime() - msBirth.getTime();
+        dayDiff = Math.round(msDiff / (1000 * 60 * 60 * 24)); //From milliseconds, convert to seconds to minutes to hours to days
+            return dayDiff;
+        } else {
+            return dayDiff = null;
+        }
+    }
+    function acceptScript() {
+        fnameScript();
+        lnameScript();
+        fullnameScript(fname, lname);
 
-function looperP() {
-    let str = ""
-    for (let i = 1; i <= 20; i++) {
-        padded = str.padStart(i,"x");
-        console.log(i);
-        document.getElementById("x20").innerHTML += padded + "<br>";
+        idScript();
+
+        birthScript();
+        dateDiff(birthday);
+
+        if(fname && lname && uid && birthday && dayDiff >= (365 * 18)) {
+            return document.getElementById("endOutput").innerHTML = fullname + " you have been breathing for " + dayDiff + " days!"
+        } else if(fname && lname && uid && birthday && dayDiff < (365 * 18)) {
+            return document.getElementById("endOutput").innerHTML = "You are probably not old enough to take this class!"
+        } else { 
+            return document.getElementById("endOutput").innerHTML = ""
+        }
     }
-}
+
+    function looperP() {
+        let str = ""
+        for (let i = 1; i <= 20; i++) {
+            padded = str.padStart(i,"x");
+            document.getElementById("x20").innerHTML += padded + "<br>";
+        }
+    }
 looperP()
+
+    function nineSum() {
+        const a = document.getElementById("catLives").value;
+        if(a == 9) {
+            return document.getElementById("test").innerHTML = "Correct, " + a + "!";
+        } else if(a === "") {
+            return document.getElementById("test").innerHTML = '<input type="number" id="catLives"><br>Invalid Response<br><button type="button" onclick="nineSum()">Answer</button>';
+        } else {
+        let b = Number(a)
+        let c = 9 - b;
+        let d = b + c;
+            return document.getElementById("test").innerHTML = d + " not " + b + "!";
+        }
+    }
 </script>
 
 </body>

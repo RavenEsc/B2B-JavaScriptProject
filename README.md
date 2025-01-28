@@ -15,7 +15,7 @@ Starting with the HTML wrapper code in the Code Editor...
 
 - [ x ] You will either need to use a For loop to iterate through your data fields character by character with JS functions like char.toUpperCase() and parsInt(char), or use Regular Expressions, to validate the UserID format.
 
-- [ ] Use the following variables (with exact variable names) to hold the data:
+- [ x ] Use the following variables (with exact variable names) to hold the data:
 
   - uid is UserID.
 
@@ -25,19 +25,19 @@ Starting with the HTML wrapper code in the Code Editor...
 
   - birthday is birthday, using type 'date'.
 
-- [ ] You have to write a function called “dateDiff” that accepts one date parameter and returns the number of days between the birthday provided and the current date.
+- [ x ] You have to write a function called “dateDiff” that accepts one date parameter and returns the number of days between the birthday provided and the current date.
 
-- [ ] Create an “Accept” button to execute your functions and create the following output:
+- [ x ] Create an “Accept” button to execute your functions and create the following output:
 
-- [ ] If the UserID does not pass your verification, then print “Invalid UserID” to the Display window.
+- [ x ] If the UserID does not pass your verification, then print “Invalid UserID” to the Display window.
 
-- [ ] If the fname, lname, or birthday fields are left empty then print “Invalid fname” etc…
+- [ x ] If the fname, lname, or birthday fields are left empty then print “Invalid fname” etc…
 
-- [ ] Print “fname lname you have been breathing for ### days!” where ### is the number returned by your dateDiff() function.  Remember to convert milliseconds to days and only return the integer (whole) number of days.
+- [ x ] Print “fname lname you have been breathing for ### days!” where ### is the number returned by your dateDiff() function.  Remember to convert milliseconds to days and only return the integer (whole) number of days.
 
-- [ ] If the number of days is less than (365*18) then print “You are probably not old enough to take this class!”
+- [ x ] If the number of days is less than (365*18) then print “You are probably not old enough to take this class!”
 
-- [ ] Use document.getElementById().innerHtml to display results and information messages on the Display window.
+- [ x ] Use document.getElementById().innerHtml to display results and information messages on the Display window.
 
 - [ x ] Create a "For loop” that loops 20 times and uses code similar to:
 
@@ -48,7 +48,7 @@ str = str.padStart(i,”x”); // i is the loop counter
 
 - [ x ] Your Xs should be printed on the Display page as depicted in the example below.
 
-- [ ] Your code output should show in the Display window.  This serves as the equivalent of the browser window and shows the render of the DOM document you are coding.
+- [ x ] Your code output should show in the Display window.  This serves as the equivalent of the browser window and shows the render of the DOM document you are coding.
 
 ## Acknowledgements
   Thank you to the challenge creators, this has been a fun and engaging challenge.
