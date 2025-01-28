@@ -4,6 +4,10 @@
 
 
 <div>
+    <!-- fun extra code -->
+    <h1 style="text-align: center;">How many lives does a cat have?</h1>
+    <h2 style="text-align: center;" id="test"><input type="number" id="catLives"><p id="test2"></p><button type="button" onclick="nineSum()">Answer</button></h2>
+
     <!-- put your HTML code to input data here -->
 
     <input id="firstName" placeholder="First">
@@ -22,9 +26,6 @@
     <output id="endOutput"></output>
 
     <p id="x20"></p>
-
-    <h1 style="text-align: center;">How many lives does a cat have?</h1>
-    <h2 style="text-align: center;" id="test"><input type="number" id="catLives"><br><button type="button" onclick="nineSum()">Answer</button></h2>
 </div>
 
 <script>
@@ -103,6 +104,7 @@
         }
     }
 
+    // "Accept" button script execution order
     function acceptScript() {
         fnameScript();
         lnameScript();
@@ -113,6 +115,7 @@
         birthScript();
         dateDiff(birthday);
 
+        // shows custom messages depending on a successful input and compares age to 18 yrs by days, clears if not successful (one or more invalid entries are present)
         if(fname && lname && uid && birthday && dayDiff >= (365 * 18)) {
             return document.getElementById("endOutput").innerHTML = fullname + " you have been breathing for " + dayDiff + " days!"
         } else if(fname && lname && uid && birthday && dayDiff < (365 * 18)) {
@@ -122,6 +125,7 @@
         }
     }
 
+    // performs a for loop upon page load, prints x's 1-20 incrementally by line
     function looperP() {
         let str = ""
         for (let i = 1; i <= 20; i++) {
@@ -131,12 +135,13 @@
     }
     looperP()
 
+    // personal extra, compares numeric answers and outputs based on number or lack thereof
     function nineSum() {
         const a = document.getElementById("catLives").value;
         if(a == 9) {
             return document.getElementById("test").innerHTML = "Correct, " + a + "!";
         } else if(a === "") {
-            return document.getElementById("test").innerHTML = '<input type="number" id="catLives"><br>Invalid Response<br><button type="button" onclick="nineSum()">Answer</button>';
+            return document.getElementById("test2").innerHTML = "Invalid Response";
         } else {
         let b = Number(a)
         let c = 9 - b;
