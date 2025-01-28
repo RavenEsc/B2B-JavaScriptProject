@@ -7,15 +7,15 @@
 
 Starting with the HTML wrapper code in the Code Editor...
 
-- [ x ] You may or may not use a `<form>`. Note that there is no backend process or program to submit a form to. If you use a form and submit, you must suppress the default action or the page will clear/load unpredictable results.
+- [x] You may or may not use a `<form>`. Note that there is no backend process or program to submit a form to. If you use a form and submit, you must suppress the default action or the page will clear/load unpredictable results.
 
-- [ x ] Ask the user to input their first name, last name, a UserID, and a birthdate in type date format.  The UserID must contain an uppercase, a lowercase, a number, and be 8 to 12 chars long.  
+- [x] Ask the user to input their first name, last name, a UserID, and a birthdate in type date format.  The UserID must contain an uppercase, a lowercase, a number, and be 8 to 12 chars long.  
 
-- [ x ] Create a JS function to verify formats of the UserID field.
+- [x] Create a JS function to verify formats of the UserID field.
 
-- [ x ] You will either need to use a For loop to iterate through your data fields character by character with JS functions like char.toUpperCase() and parsInt(char), or use Regular Expressions, to validate the UserID format.
+- [x] You will either need to use a For loop to iterate through your data fields character by character with JS functions like char.toUpperCase() and parsInt(char), or use Regular Expressions, to validate the UserID format.
 
-- [ x ] Use the following variables (with exact variable names) to hold the data:
+- [x] Use the following variables (with exact variable names) to hold the data:
 
   - uid is UserID.
 
@@ -25,30 +25,30 @@ Starting with the HTML wrapper code in the Code Editor...
 
   - birthday is birthday, using type 'date'.
 
-- [ x ] You have to write a function called “dateDiff” that accepts one date parameter and returns the number of days between the birthday provided and the current date.
+- [x] You have to write a function called “dateDiff” that accepts one date parameter and returns the number of days between the birthday provided and the current date.
 
-- [ x ] Create an “Accept” button to execute your functions and create the following output:
+- [x] Create an “Accept” button to execute your functions and create the following output:
 
-- [ x ] If the UserID does not pass your verification, then print “Invalid UserID” to the Display window.
+- [x] If the UserID does not pass your verification, then print “Invalid UserID” to the Display window.
 
-- [ x ] If the fname, lname, or birthday fields are left empty then print “Invalid fname” etc…
+- [x] If the fname, lname, or birthday fields are left empty then print “Invalid fname” etc…
 
-- [ x ] Print “fname lname you have been breathing for ### days!” where ### is the number returned by your dateDiff() function.  Remember to convert milliseconds to days and only return the integer (whole) number of days.
+- [x] Print “fname lname you have been breathing for ### days!” where ### is the number returned by your dateDiff() function.  Remember to convert milliseconds to days and only return the integer (whole) number of days.
 
-- [ x ] If the number of days is less than (365*18) then print “You are probably not old enough to take this class!”
+- [x] If the number of days is less than (365*18) then print “You are probably not old enough to take this class!”
 
-- [ x ] Use document.getElementById().innerHtml to display results and information messages on the Display window.
+- [x] Use document.getElementById().innerHtml to display results and information messages on the Display window.
 
-- [ x ] Create a "For loop” that loops 20 times and uses code similar to:
+- [x] Create a "For loop” that loops 20 times and uses code similar to:
 
-- [ x ] let str = "";
+- [x] let str = "";
 str = str.padStart(i,”x”); // i is the loop counter
 
-- [ x ] to print 20 lines of Xs from 1 to 20 Xs.  The first line should have a single X and the 20th line should have 20 Xs.
+- [x] to print 20 lines of Xs from 1 to 20 Xs.  The first line should have a single X and the 20th line should have 20 Xs.
 
-- [ x ] Your Xs should be printed on the Display page as depicted in the example below.
+- [x] Your Xs should be printed on the Display page as depicted in the example below.
 
-- [ x ] Your code output should show in the Display window.  This serves as the equivalent of the browser window and shows the render of the DOM document you are coding.
+- [x] Your code output should show in the Display window.  This serves as the equivalent of the browser window and shows the render of the DOM document you are coding.
 
 ## Acknowledgements
   Thank you to the challenge creators, this has been a fun and engaging challenge.
