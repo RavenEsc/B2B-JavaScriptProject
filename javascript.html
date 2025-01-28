@@ -5,16 +5,20 @@
 
 <div>
     <!-- put your HTML code to input data here -->
+
     <input id="firstName" placeholder="First">
     <output id="fnameOutput"></output> <br><br>
+
     <input id="lastName" placeholder="Last">
     <output id="lnameOutput"></output> <br><br>
+
     <input id="userID" placeholder="ID">
     <output id="uidOutput"></output> <br><br>
+
     <input type="date" id="birthDate">
     <output id="birthdayOutput"></output>
-    <button onclick="acceptScript()">Accept</button> <br><br>
 
+    <button onclick="acceptScript()">Accept</button> <br><br>
     <output id="endOutput"></output>
 
     <p id="x20"></p>
@@ -31,32 +35,39 @@
     // write your JS Loop For here to print the Xs
     // use something like document.write(str.padStart(i,"x") + "<br>");
 
+    // user inputs their first name here
     function fnameScript() {
-        let f = document.getElementById("firstName").value.toLowerCase();
+        let f = document.getElementById("firstName").value.toLowerCase(); // sets all characters to lowercase
         if(f !== "") {
-        fname = f.charAt(0).toUpperCase() + f.slice(1);
-            return fname, document.getElementById("fnameOutput").innerHTML = "";
+        fname = f.charAt(0).toUpperCase() + f.slice(1); // capitalizes first letter
+            return fname, document.getElementById("fnameOutput").innerHTML = ""; // sets the fname variable and clears any messages
         } else {
-            return fname = null, document.getElementById("fnameOutput").innerHTML = "Invalid fname";
+            return fname = null, document.getElementById("fnameOutput").innerHTML = "Invalid fname"; // sets the fname variable to null and notifies issue onscreen
         }
     }
+
+    // user inputs their last name here
     function lnameScript() {
-        let l = document.getElementById("lastName").value.toLowerCase();
+        let l = document.getElementById("lastName").value.toLowerCase(); // sets all characters to lowercase
         if(l !== "") {
-        lname = l.charAt(0).toUpperCase() + l.slice(1);
-            return lname, document.getElementById("lnameOutput").innerHTML = "";
+        lname = l.charAt(0).toUpperCase() + l.slice(1); // capitalizes first letter
+            return lname, document.getElementById("lnameOutput").innerHTML = ""; // sets the lname variable and clears any messages
         } else {
-            return lname = null, document.getElementById("lnameOutput").innerHTML = "Invalid lname";
+            return lname = null, document.getElementById("lnameOutput").innerHTML = "Invalid lname"; // sets the lname variable to null and notifies issue onscreen
         }
     }
+
+    // concatenates first and last name together
     function fullnameScript(fname, lname) {
+        // if both the fname and lname exist, set to fullname
         if(fname !== null && lname !== null) {
         fullname = fname + " " + lname;
             return fullname;
         } else {
-            return fullname = null
+            return fullname = null // otherwise set fullname to null
         }
     }
+
     function idScript() {
         let userID = document.getElementById("userID").value;
         if(userID.match(/[A-Z]/) && userID.match(/[a-z]/) && userID.match(/[0-9]/) && userID.length >= 8 && userID.length <= 12) {
@@ -65,6 +76,7 @@
             return uid = null, document.getElementById("uidOutput").innerHTML = "Invalid uid";
         }
     }
+
     function birthScript() {
         let bday = document.getElementById("birthDate").value;
         if(bday !== "") {
@@ -73,6 +85,7 @@
             return birthday = null, document.getElementById("birthdayOutput").innerHTML = "Invalid birthday <br><br>";
         }
     }
+
     function dateDiff(birthday) {
         const today = new Date();
         if(birthday !== null) {
@@ -84,6 +97,7 @@
             return dayDiff = null;
         }
     }
+
     function acceptScript() {
         fnameScript();
         lnameScript();
@@ -110,7 +124,7 @@
             document.getElementById("x20").innerHTML += padded + "<br>";
         }
     }
-looperP()
+    looperP()
 
     function nineSum() {
         const a = document.getElementById("catLives").value;
