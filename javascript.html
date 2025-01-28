@@ -4,23 +4,28 @@
 
 
 <div>
+    <!-- fun extra code -->
+    <h1 style="text-align: center;">How many lives does a cat have?</h1>
+    <h2 style="text-align: center;" id="test"><input type="number" id="catLives"><p id="test2"></p><button type="button" onclick="nineSum()">Answer</button></h2>
+
     <!-- put your HTML code to input data here -->
+
     <input id="firstName" placeholder="First">
     <output id="fnameOutput"></output> <br><br>
+
     <input id="lastName" placeholder="Last">
     <output id="lnameOutput"></output> <br><br>
+
     <input id="userID" placeholder="ID">
     <output id="uidOutput"></output> <br><br>
+
     <input type="date" id="birthDate">
     <output id="birthdayOutput"></output>
-    <button onclick="acceptScript()">Accept</button> <br><br>
 
+    <button onclick="acceptScript()">Accept</button> <br><br>
     <output id="endOutput"></output>
 
     <p id="x20"></p>
-
-    <h1 style="text-align: center;">How many lives does a cat have?</h1>
-    <h2 style="text-align: center;" id="test"><input type="number" id="catLives"><br><button type="button" onclick="nineSum()">Answer</button></h2>
 </div>
 
 <script>
@@ -31,59 +36,75 @@
     // write your JS Loop For here to print the Xs
     // use something like document.write(str.padStart(i,"x") + "<br>");
 
+    // user inputs their first name here
     function fnameScript() {
-        let f = document.getElementById("firstName").value.toLowerCase();
+        let f = document.getElementById("firstName").value.toLowerCase(); // sets all characters to lowercase
         if(f !== "") {
-        fname = f.charAt(0).toUpperCase() + f.slice(1);
-            return fname, document.getElementById("fnameOutput").innerHTML = "";
+        fname = f.charAt(0).toUpperCase() + f.slice(1); // capitalizes first letter
+            return fname, document.getElementById("fnameOutput").innerHTML = ""; // sets the fname variable and clears any messages
         } else {
-            return fname = null, document.getElementById("fnameOutput").innerHTML = "Invalid fname";
+            return fname = null, document.getElementById("fnameOutput").innerHTML = "Invalid fname"; // sets the fname variable to null and notifies issue onscreen
         }
     }
+
+    // user inputs their last name here
     function lnameScript() {
-        let l = document.getElementById("lastName").value.toLowerCase();
+        let l = document.getElementById("lastName").value.toLowerCase(); // sets all characters to lowercase
         if(l !== "") {
-        lname = l.charAt(0).toUpperCase() + l.slice(1);
-            return lname, document.getElementById("lnameOutput").innerHTML = "";
+        lname = l.charAt(0).toUpperCase() + l.slice(1); // capitalizes first letter
+            return lname, document.getElementById("lnameOutput").innerHTML = ""; // sets the lname variable and clears any messages
         } else {
-            return lname = null, document.getElementById("lnameOutput").innerHTML = "Invalid lname";
+            return lname = null, document.getElementById("lnameOutput").innerHTML = "Invalid lname"; // sets the lname variable to null and notifies issue onscreen
         }
     }
+
+    // concatenates first and last name together
     function fullnameScript(fname, lname) {
+        // if both the fname and lname exist, set to fullname
         if(fname !== null && lname !== null) {
         fullname = fname + " " + lname;
             return fullname;
         } else {
-            return fullname = null
+            return fullname = null // otherwise set fullname to null
         }
     }
+
+    // user inputs user id here
     function idScript() {
         let userID = document.getElementById("userID").value;
+        // validates the userID if it contains a capital, lowercase, number, and is between 8 and 12
         if(userID.match(/[A-Z]/) && userID.match(/[a-z]/) && userID.match(/[0-9]/) && userID.length >= 8 && userID.length <= 12) {
-            return uid = userID, document.getElementById("uidOutput").innerHTML = "";
+            return uid = userID, document.getElementById("uidOutput").innerHTML = ""; // sets the uid and clears any messages onscreen
         } else {
-            return uid = null, document.getElementById("uidOutput").innerHTML = "Invalid uid";
+            return uid = null, document.getElementById("uidOutput").innerHTML = "Invalid uid"; // sets the uid to null and notifies issues onscreen
         }
     }
+
+    // user inputs birthday here
     function birthScript() {
         let bday = document.getElementById("birthDate").value;
         if(bday !== "") {
-            return birthday = bday, document.getElementById("birthdayOutput").innerHTML = ""
+            return birthday = bday, document.getElementById("birthdayOutput").innerHTML = ""; // sets the birthday and clears any messages onscreen
         } else {
-            return birthday = null, document.getElementById("birthdayOutput").innerHTML = "Invalid birthday <br><br>";
+            return birthday = null, document.getElementById("birthdayOutput").innerHTML = "Invalid birthday <br><br>"; // sets the birthday to null and notifies issues onscreen
         }
     }
+
+    // calculates the difference between users birthday and today by days
     function dateDiff(birthday) {
         const today = new Date();
-        if(birthday !== null) {
-        let msBirth = new Date(birthday);
-        let msDiff = today.getTime() - msBirth.getTime();
-        dayDiff = Math.round(msDiff / (1000 * 60 * 60 * 24)); //From milliseconds, convert to seconds to minutes to hours to days
+        // checks if birthday is empty or not
+        if(birthday) {
+        let msBirth = new Date(birthday); // converts birthday to a date
+        let msDiff = today.getTime() - msBirth.getTime(); // gets the difference between the two days
+        dayDiff = Math.round(msDiff / (1000 * 60 * 60 * 24)); //From milliseconds, convert to seconds to minutes to hours to days (rounded)
             return dayDiff;
         } else {
             return dayDiff = null;
         }
     }
+
+    // "Accept" button script execution order
     function acceptScript() {
         fnameScript();
         lnameScript();
@@ -94,6 +115,7 @@
         birthScript();
         dateDiff(birthday);
 
+        // shows custom messages depending on a successful input and compares age to 18 yrs by days, clears if not successful (one or more invalid entries are present)
         if(fname && lname && uid && birthday && dayDiff >= (365 * 18)) {
             return document.getElementById("endOutput").innerHTML = fullname + " you have been breathing for " + dayDiff + " days!"
         } else if(fname && lname && uid && birthday && dayDiff < (365 * 18)) {
@@ -103,6 +125,7 @@
         }
     }
 
+    // performs a for loop upon page load, prints x's 1-20 incrementally by line
     function looperP() {
         let str = ""
         for (let i = 1; i <= 20; i++) {
@@ -110,14 +133,15 @@
             document.getElementById("x20").innerHTML += padded + "<br>";
         }
     }
-looperP()
+    looperP()
 
+    // personal extra, compares numeric answers and outputs based on number or lack thereof
     function nineSum() {
         const a = document.getElementById("catLives").value;
         if(a == 9) {
             return document.getElementById("test").innerHTML = "Correct, " + a + "!";
         } else if(a === "") {
-            return document.getElementById("test").innerHTML = '<input type="number" id="catLives"><br>Invalid Response<br><button type="button" onclick="nineSum()">Answer</button>';
+            return document.getElementById("test2").innerHTML = "Invalid Response";
         } else {
         let b = Number(a)
         let c = 9 - b;
