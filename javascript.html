@@ -79,21 +79,24 @@
         }
     }
 
+    // user inputs birthday here
     function birthScript() {
         let bday = document.getElementById("birthDate").value;
         if(bday !== "") {
-            return birthday = bday, document.getElementById("birthdayOutput").innerHTML = ""
+            return birthday = bday, document.getElementById("birthdayOutput").innerHTML = ""; // sets the birthday and clears any messages onscreen
         } else {
-            return birthday = null, document.getElementById("birthdayOutput").innerHTML = "Invalid birthday <br><br>";
+            return birthday = null, document.getElementById("birthdayOutput").innerHTML = "Invalid birthday <br><br>"; // sets the birthday to null and notifies issues onscreen
         }
     }
 
+    // calculates the difference between users birthday and today by days
     function dateDiff(birthday) {
         const today = new Date();
-        if(birthday !== null) {
-        let msBirth = new Date(birthday);
-        let msDiff = today.getTime() - msBirth.getTime();
-        dayDiff = Math.round(msDiff / (1000 * 60 * 60 * 24)); //From milliseconds, convert to seconds to minutes to hours to days
+        // checks if birthday is empty or not
+        if(birthday) {
+        let msBirth = new Date(birthday); // converts birthday to a date
+        let msDiff = today.getTime() - msBirth.getTime(); // gets the difference between the two days
+        dayDiff = Math.round(msDiff / (1000 * 60 * 60 * 24)); //From milliseconds, convert to seconds to minutes to hours to days (rounded)
             return dayDiff;
         } else {
             return dayDiff = null;
